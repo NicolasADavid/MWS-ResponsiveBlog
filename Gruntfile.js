@@ -12,17 +12,34 @@ module.exports = function(grunt) {
     responsive_images: {
       dev: {
         options: {
-          engine: 'im',
+          engine: 'gm',
+          // sizes: [{
+          //   /*
+          //   Change these:
+          //
+          //   width: ,
+          //   suffix: ,
+          //   quality:
+          //   */
+          //
+          //   width: 200
+          //
+          // }]
           sizes: [{
-            /*
-            Change these:
-            
-            width: ,
-            suffix: ,
-            quality:
-            */
-          }]
-        },
+            name: 'small',
+            width: 320,
+            // height: 240
+          },{
+            name: 'medium',
+            width: 650
+          },{
+            name: 'large',
+            width: 1024,
+            // separator: "-"
+            // suffix: "_x2",
+            // quality: 0.6
+          }
+        ]},
 
         /*
         You don't need to change this part if you don't change
@@ -64,7 +81,7 @@ module.exports = function(grunt) {
       },
     },
   });
-  
+
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
