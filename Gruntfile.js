@@ -13,25 +13,13 @@ module.exports = function(grunt) {
       dev: {
         options: {
           engine: 'gm',
-          // sizes: [{
-          //   /*
-          //   Change these:
-          //
-          //   width: ,
-          //   suffix: ,
-          //   quality:
-          //   */
-          //
-          //   width: 200
-          //
-          // }]
           sizes: [{
             name: 'small',
-            width: 320,
-            // height: 240
+            width: 320
           },{
             name: 'medium',
-            width: 650
+            width: 650,
+            quality: 50
           },{
             name: 'large',
             width: 1024,
@@ -40,11 +28,6 @@ module.exports = function(grunt) {
             // quality: 0.6
           }
         ]},
-
-        /*
-        You don't need to change this part if you don't change
-        the directory structure.
-        */
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
